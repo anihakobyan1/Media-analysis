@@ -1,0 +1,212 @@
+:root {
+    --primary-color: #961B20;
+    --secondary-color: #f8f9fa;
+    --border-color: #e0e0e0;
+    --text-color: #333;
+    --light-text: #6c757d;
+    --er-color: #30d0ff;
+    --kprf-color: #ff8080;
+    --ldpr-color: #30a0e0;
+    --nl-color: #e2b9ff;
+    --base-font-size: 1rem; /* 16px по умолчанию */
+    --container-width: 90vw;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+body {
+    background-color: #f5f5f5;
+    color: var(--text-color);
+    line-height: 1.6;
+    font-size: var(--base-font-size);
+}
+
+.container {
+    max-width: 97.5rem; /* 1560px */
+    width: var(--container-width);
+    margin: 0 auto;
+    padding: 1.25rem;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.875rem;
+    padding-bottom: 1.25rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.header-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    text-transform: uppercase;
+}
+
+.header-info {
+    text-align: right;
+    font-size: 1.25rem;
+    color: var(--text-color);
+}
+
+.stats-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.875rem;
+    margin-bottom: 1.875rem;
+    width: 100%;
+    /* Убираем фиксированную высоту */
+}
+
+.stat-card {
+    flex: 1 1 18.75rem;
+    /* Убираем фиксированную высоту */
+    min-height: 12rem; /* Минимальная высота */
+    background: white;
+    border-radius: 0.75rem;
+    padding: 0.5rem 1.5rem;
+    box-shadow: 0 0.25rem 0.375rem rgba(0,0,0,0.05);
+    position: relative;
+    overflow: visible; /* Важно для отображения всех элементов */
+    text-align: center;
+}
+
+
+.chart-container {
+    position: relative;
+    width: 100%;
+    /* Высота будет рассчитываться динамически */
+    min-height: 15rem; /* Минимальная высота */
+}
+
+
+.progress-bar {
+    height: 0.5rem;
+    background-color: #e9ecef;
+    border-radius: 0.25rem;
+    margin-top: 0.3125rem;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    border-radius: 0.25rem;
+}
+
+.red { background-color: #ff0000; }
+.yellow { background-color: #FFE003; }
+.green { background-color: #00ff00; }
+.navy { background-color: #0070c0; }
+.khaki { background-color: #7b815f; }
+
+.data-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    margin-bottom: 1.875rem;
+    background: white;
+    border-radius: 0.75rem;
+    overflow: hidden;
+    box-shadow: 0 0.25rem 0.375rem rgba(0,0,0,0.05);
+}
+
+.data-table th {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 0.9375rem;
+    text-align: left;
+    font-weight: 600;
+}
+
+.data-table td {
+    padding: 0.9375rem;
+    border-bottom: 1px solid var(--border-color);
+    vertical-align: top;
+}
+
+.data-table tr:last-child td {
+    border-bottom: none;
+}
+
+.data-table tr:hover {
+    background-color: rgba(0,0,0,0.02);
+}
+
+.news-title {
+    font-weight: 600;
+    margin-bottom: 0.3125rem;
+    color: var(--text-color);
+    text-decoration: none;
+    display: block;
+}
+
+.news-title:hover {
+    color: var(--primary-color);
+}
+
+.news-url {
+    font-size: 0.875rem;
+    color: var(--primary-color);
+    word-break: break-all;
+    text-decoration: none;
+    display: block;
+}
+
+.news-url:hover {
+    text-decoration: underline;
+}
+
+.news-count {
+    font-weight: 600;
+    text-align: center;
+}
+
+.news-reach {
+    font-weight: 600;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.section-title {
+    font-size: 1.375rem;
+    font-weight: 600;
+    margin: 1.875rem 0 0.9375rem;
+    color: var(--primary-color);
+    padding-bottom: 0.625rem;
+    border-bottom: 2px solid var(--border-color);
+}
+
+.attn {
+    background-color: #fff0f0;
+}
+
+.er-row th { background-color: var(--er-color); }
+.kprf-row th { background-color: var(--kprf-color); }
+.ldpr-row th { background-color: var(--ldpr-color); }
+.nl-row th { background-color: var(--nl-color); }
+
+@media (max-width: 48rem) { /* 768px */
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .header-info {
+        margin-top: 0.625rem;
+        text-align: left;
+    }
+    
+    .stat-card {
+        flex: 1 1 100%;
+    }
+    
+    .stats-container {
+        height: auto;
+    }
+}
